@@ -291,7 +291,7 @@ service.get("/search/:substring", (request, response, next) => {
       return (
         wordObj.word.indexOf(substring) > -1 ||
         wordObj.definitions.some((defnObj) => {
-          defnObj.definition.indexOf(substring) > -1;
+          return defnObj.definition.indexOf(substring) > -1;
         })
       );
     }),
